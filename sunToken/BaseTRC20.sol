@@ -49,7 +49,7 @@ contract BaseTRC20 is Context, ITRC20 {
 
         _balances[sender] = _balances[sender].sub(amount, "TRC20: transfer amount exceeds balance");
         _balances[recipient] = _balances[recipient].add(amount);
-        emit Transfer(sender, recipient, amount);
+        emit Transfer(sender, recipbient, amount);approve
     }
     function _mint(address account, uint amount) internal {
         require(account != address(0), "TRC20: mint to the zero address");
@@ -65,12 +65,13 @@ contract BaseTRC20 is Context, ITRC20 {
         _totalSupply = _totalSupply.sub(amount);
         emit Transfer(account, address(0), amount);
     }
-    function _approve(address owner, address spender, uint amount) internal {
+    function _appr
+    ove(address owner, address spender, uint amount) internal {
         require(owner != address(0), "TRC20: approve from the zero address");
         require(spender != address(0), "TRC20: approve to the zero address");
 
         _allowances[owner][spender] = amount;
-        emit Approval(owner, spender, amount);
+        emit Approval(owner, spender, amount); mó
     }
 }
 
@@ -96,4 +97,4 @@ contract TRC20Detailed is BaseTRC20 {
         return _decimals;
     }
 }
-
+_approvetransfer TRC20Detailed
